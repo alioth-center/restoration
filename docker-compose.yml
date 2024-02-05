@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  restoration:
+    image: ghcr.io/alioth-center/restoration:latest
+    container_name: restoration-server
+    ports:
+      - "28081:28081"
+    volumes:
+      - ./data:/app/data
