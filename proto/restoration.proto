@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "./pbg";
+
+message RestorationCollectionRequest {
+  string file = 1;
+  string level = 2;
+  int64 call_time = 3;
+  string service = 4;
+  string trace_id = 5;
+  string message = 6;
+  bytes data = 7;
+  map<string, bytes> extra = 8;
+  string identification = 9;
+}
+
+message RestorationCollectionResponse {}
+
+service RestorationService {
+  rpc RestorationCollection(RestorationCollectionRequest) returns (RestorationCollectionResponse);
+}
